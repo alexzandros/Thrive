@@ -38,7 +38,7 @@ public class GameProperties
     ///   The tutorial state for this game
     /// </summary>
     [JsonProperty]
-    public TutorialState TutorialState{ get; private set; }
+    public TutorialState TutorialState { get; private set; }
 
     /// <summary>
     ///   Starts a new game in the microbe stage

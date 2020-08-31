@@ -131,6 +131,11 @@ public class Settings
     public bool ChromaticEnabled { get; set; } = true;
 
     /// <summary>
+    ///   Show tutorial messages
+    /// </summary>
+    public bool TutorialsEnabled { get; set; } = true;
+
+    /// <summary>
     ///   Saves the current settings by writing them to the settings file
     /// </summary>
     /// <returns>True on success, false if the file can't be written.</returns>

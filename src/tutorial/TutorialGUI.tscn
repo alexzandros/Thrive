@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/tutorial/TutorialGUI.cs" type="Script" id=1]
+[ext_resource path="res://src/gui_common/thrive_theme.tres" type="Theme" id=2]
+
+[node name="TutorialGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+MicrobeWelcomeMessagePath = NodePath("MicrobeWelcome")
+
+[node name="MicrobeWelcome" type="WindowDialog" parent="."]
+visible = true
+margin_right = 48.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+popup_exclusive = true
+window_title = "Tutorial"
+resizable = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MicrobeWelcome"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 5.0
+margin_bottom = 5.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MicrobeWelcome/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 23.0
+text = "Welcome to Thrive"
+
+[node name="CheckBox" type="CheckBox" parent="MicrobeWelcome/VBoxContainer"]
+margin_top = 27.0
+margin_right = 187.0
+margin_bottom = 52.0
+pressed = true
+text = "Show tutorials"
+
+[node name="Button" type="Button" parent="MicrobeWelcome/VBoxContainer"]
+margin_top = 56.0
+margin_right = 187.0
+margin_bottom = 80.0
+text = "Let's Begin"

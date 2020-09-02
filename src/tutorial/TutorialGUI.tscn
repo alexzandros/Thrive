@@ -17,7 +17,7 @@ MicrobeWelcomeMessagePath = NodePath("MicrobeWelcome")
 [node name="MicrobeWelcome" type="WindowDialog" parent="."]
 margin_right = 600.0
 margin_bottom = 350.0
-rect_min_size = Vector2( 600, 350 )
+rect_min_size = Vector2( 600, 450 )
 size_flags_horizontal = 3
 popup_exclusive = true
 window_title = "Tutorial"
@@ -27,27 +27,34 @@ resizable = true
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 595.0
-margin_bottom = 345.0
-rect_min_size = Vector2( 590, 340 )
+margin_bottom = 427.0
+rect_min_size = Vector2( 590, 440 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="MicrobeWelcome/VBoxContainer"]
 margin_right = 590.0
-margin_bottom = 23.0
-text = "Welcome to Thrive"
+margin_bottom = 361.0
+text = "On a distant alien planet, eons of volcanic activity and meteor impacts have lead to the development of a new phenomenon in the universe.
+
+Life.
+
+Simple microbes reside in the deep regions of the ocean. You are the last universal common ancestor (LUCA) on this planet.
+
+To survive in this hostile world, you will need to collect any compounds that you can find and evolve each generation to compete against the other species of microbes."
+autowrap = true
 
 [node name="Control" type="Control" parent="MicrobeWelcome/VBoxContainer"]
-margin_top = 27.0
+margin_top = 365.0
 margin_right = 590.0
-margin_bottom = 283.0
+margin_bottom = 383.0
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MicrobeWelcome/VBoxContainer"]
-margin_top = 287.0
+margin_top = 387.0
 margin_right = 590.0
-margin_bottom = 312.0
+margin_bottom = 412.0
 
 [node name="Control" type="Control" parent="MicrobeWelcome/VBoxContainer/HBoxContainer"]
 margin_right = 10.0
@@ -62,11 +69,11 @@ pressed = true
 text = "Show tutorials"
 
 [node name="Button" type="Button" parent="MicrobeWelcome/VBoxContainer"]
-margin_left = 231.0
-margin_top = 316.0
-margin_right = 359.0
-margin_bottom = 340.0
+margin_left = 217.0
+margin_top = 416.0
+margin_right = 373.0
+margin_bottom = 440.0
 size_flags_horizontal = 4
-text = "Let's Begin"
+text = "Begin Thriving"
 [connection signal="popup_hide" from="MicrobeWelcome" to="." method="OnClickedCloseAll"]
 [connection signal="pressed" from="MicrobeWelcome/VBoxContainer/Button" to="." method="OnClickedCloseAll"]

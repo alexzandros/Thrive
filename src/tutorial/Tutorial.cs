@@ -11,8 +11,14 @@ public class Tutorial
     public Tutorial(TutorialState state, TutorialGUI gui)
     {
         this.gui = gui;
+        gui.EventReceiver = state;
         State = state;
     }
 
     public TutorialState State { get; }
+
+    public void Process(float delta)
+    {
+        State.Process(gui, delta);
+    }
 }

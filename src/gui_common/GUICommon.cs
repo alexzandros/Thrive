@@ -35,6 +35,13 @@ public class GUICommon : Node
     /// </summary>
     public AudioStreamPlayer AudioSource { get; }
 
+    public static Vector2 GetFirstChildMinSize(Control control)
+    {
+        var child = control.GetChild<Control>(0);
+
+        return child.RectMinSize;
+    }
+
     /// <summary>
     ///   Play the button click sound effect.
     /// </summary>

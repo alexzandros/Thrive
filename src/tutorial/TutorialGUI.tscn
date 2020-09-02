@@ -6,6 +6,7 @@
 [node name="TutorialGUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -14,9 +15,9 @@ __meta__ = {
 MicrobeWelcomeMessagePath = NodePath("MicrobeWelcome")
 
 [node name="MicrobeWelcome" type="WindowDialog" parent="."]
-visible = true
-margin_right = 48.0
-margin_bottom = 40.0
+margin_right = 600.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 600, 350 )
 size_flags_horizontal = 3
 popup_exclusive = true
 window_title = "Tutorial"
@@ -25,27 +26,47 @@ resizable = true
 [node name="VBoxContainer" type="VBoxContainer" parent="MicrobeWelcome"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 5.0
-margin_bottom = 5.0
-size_flags_horizontal = 3
+margin_right = 595.0
+margin_bottom = 345.0
+rect_min_size = Vector2( 590, 340 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="MicrobeWelcome/VBoxContainer"]
-margin_right = 187.0
+margin_right = 590.0
 margin_bottom = 23.0
 text = "Welcome to Thrive"
 
-[node name="CheckBox" type="CheckBox" parent="MicrobeWelcome/VBoxContainer"]
+[node name="Control" type="Control" parent="MicrobeWelcome/VBoxContainer"]
 margin_top = 27.0
-margin_right = 187.0
-margin_bottom = 52.0
+margin_right = 590.0
+margin_bottom = 283.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MicrobeWelcome/VBoxContainer"]
+margin_top = 287.0
+margin_right = 590.0
+margin_bottom = 312.0
+
+[node name="Control" type="Control" parent="MicrobeWelcome/VBoxContainer/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="CheckBox" type="CheckBox" parent="MicrobeWelcome/VBoxContainer/HBoxContainer"]
+margin_left = 14.0
+margin_right = 193.0
+margin_bottom = 25.0
 pressed = true
 text = "Show tutorials"
 
 [node name="Button" type="Button" parent="MicrobeWelcome/VBoxContainer"]
-margin_top = 56.0
-margin_right = 187.0
-margin_bottom = 80.0
+margin_left = 231.0
+margin_top = 316.0
+margin_right = 359.0
+margin_bottom = 340.0
+size_flags_horizontal = 4
 text = "Let's Begin"
+[connection signal="popup_hide" from="MicrobeWelcome" to="." method="OnClickedCloseAll"]
+[connection signal="pressed" from="MicrobeWelcome/VBoxContainer/Button" to="." method="OnClickedCloseAll"]
